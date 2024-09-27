@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  .input {
+    @apply bg-gray-100 border-2 hover:border-blue-500 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+  }
+
+  .green-button {
+    @apply cursor-pointer no-underline text-[16px] md:text-[14px] border bg-[#22982a] hover:bg-black transition-all text-white px-3 py-1;
+  }
+}

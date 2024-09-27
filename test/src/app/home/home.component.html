@@ -1,1 +1,27 @@
-<p>home works!</p>
+<form [formGroup]="bookForm">
+  <input
+    type="text"
+    id="title"
+    formControlName="title"
+    placeholder="Title"
+    class="input"
+    required
+  />
+  <input
+    type="text"
+    id="author"
+    formControlName="author"
+    placeholder="Author"
+    class="input"
+    required
+  />
+  <input
+    type="text"
+    id="year"
+    formControlName="year"
+    placeholder="Year"
+    class="input"
+    required
+  />
+  <button type="submit" class="green-button">Add Book</button>
+</form>
