@@ -51,13 +51,20 @@ export class ListComponent implements OnInit {
     });
   }
 
+  routeUpdateBookForm() {
+    this.router.navigate(['/home/update'], {
+      relativeTo: this.route,
+    });
+  }
+
   searchBooks() {
     if (!this.searchQuery) {
       this.filteredBooks = this.books;
     } else {
-      this.filteredBooks = this.books.filter((book) =>
-        book.title.toLowercase().includes(this.searchQuery.toLowerCase()) ||
-        book.author.toLowercase().includes(this.searchQuery.toLowerCase()) 
+      this.filteredBooks = this.books.filter(
+        (book) =>
+          book.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          book.author.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     }
   }
