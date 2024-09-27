@@ -1,0 +1,58 @@
+<!-- <div *ngIf="books && books.length > 0; else noBooks">
+  <h2>Books LIst</h2>
+  <ul>
+    <li *ngFor="let book of books" class="my-5">
+      <strong>{{ book.title }}</strong> by {{ book.author }} ({{ book.year }})
+      <button
+        type="submit"
+        (click)="onDelete(book.id)"
+        class="bg-red-500 text-white rounded-md px-2"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+  <button
+    (click)="routeBookForm()"
+    class="bg-lime-500 text-slate-50 rounded-md border border-white px-4"
+  >
+    Add Books
+  </button>
+</div> -->
+
+<div>
+  <h2>Books List</h2>
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="filteredBooks"
+    placeholder="Search by title or author"
+    class="input"
+  />
+</div>
+
+<div *ngIf="filteredBooks && filteredBooks.length > 0; else noBooks">
+  <h2>Books LIst</h2>
+  <ul>
+    <li *ngFor="let book of filteredBooks" class="my-5">
+      <strong>{{ book.title }}</strong> by {{ book.author }} ({{ book.year }})
+      <button
+        type="submit"
+        (click)="onDelete(book.id)"
+        class="bg-red-500 text-white rounded-md px-2"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+  <button
+    (click)="routeBookForm()"
+    class="bg-lime-500 text-slate-50 rounded-md border border-white px-4"
+  >
+    Add Books
+  </button>
+</div>
+
+<ng-template #noBooks>
+  <p>No books available.</p>
+</ng-template>

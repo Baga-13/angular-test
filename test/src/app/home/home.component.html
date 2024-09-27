@@ -1,27 +1,31 @@
-<form [formGroup]="bookForm">
-  <input
-    type="text"
-    id="title"
-    formControlName="title"
-    placeholder="Title"
-    class="input"
-    required
-  />
-  <input
-    type="text"
-    id="author"
-    formControlName="author"
-    placeholder="Author"
-    class="input"
-    required
-  />
-  <input
-    type="text"
-    id="year"
-    formControlName="year"
-    placeholder="Year"
-    class="input"
-    required
-  />
-  <button type="submit" class="green-button">Add Book</button>
-</form>
+<main class="flex justify-center items-center h-screen">
+  <form class="w-[300px] space-y-10" (ngSubmit)="onSubmit()" [formGroup]="bookForm">
+    <input
+      type="text"
+      id="title"
+      formControlName="title"
+      placeholder="Title"
+      class="input"
+      required
+    />
+    <input
+      type="text"
+      id="author"
+      formControlName="author"
+      placeholder="Author"
+      class="input"
+      required
+    />
+    <input
+      type="text"
+      id="year"
+      formControlName="year"
+      placeholder="Year"
+      class="input"
+      required
+    />
+    <button type="submit" class="green-button rounded-md" [disabled]="bookForm.invalid">
+      Add Book
+    </button>
+  </form>
+</main>
