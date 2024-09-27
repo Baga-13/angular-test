@@ -52,7 +52,7 @@ export class ListComponent implements OnInit {
   }
 
   routeUpdateBookForm() {
-    this.router.navigate(['/home/update'], {
+    this.router.navigate(['/home/update/:id'], {
       relativeTo: this.route,
     });
   }

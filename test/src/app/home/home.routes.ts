@@ -6,7 +6,7 @@ import { UpdateBookComponent } from './update-book/update-book.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'update', component: UpdateBookComponent },
+  { path: 'update/:id', component: UpdateBookComponent },
   { path: 'booklist', component: ListComponent },
   { path: '**', redirectTo: 'home' },
 ];

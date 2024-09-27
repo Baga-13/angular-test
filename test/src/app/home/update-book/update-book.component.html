@@ -1,1 +1,6 @@
-<p>update-book works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="bookForm">
+  <input type="text" formControlName="title" placeholder="Title" required />
+  <input type="text" formControlName="author" placeholder="Author" required />
+  <input type="text" formControlName="year" placeholder="Year" required />
+  <button type="submit">Update Book</button>
+</form>

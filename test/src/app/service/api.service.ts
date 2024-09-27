@@ -14,7 +14,7 @@ export class ApiService {
     return this.http.get<Book[]>(this.ApiUrl);
   }
   getBook(id: any): Observable<any> {
-    return this.http.get<Book>(`${this.ApiUrl}/${id}`);
+    return this.http.get(`${this.ApiUrl}/${id}`);
   }
   addBook(book: Book): Observable<any> {
     return this.http.post<Book>(this.ApiUrl, book);
@@ -22,4 +22,7 @@ export class ApiService {
   deleteBook(id: any): Observable<any> {
     return this.http.delete(`${this.ApiUrl}/${id}`);
   }
+  updateBook(id: any, book: any): Observable<any> {
+    return this.http.put(`${this.ApiUrl}/${id}`, book);
+  }  
 }
